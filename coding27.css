@@ -1,0 +1,87 @@
+:root {
+  --dark-color: rgb(121, 121, 255);
+  --light-color: rgb(184, 184, 184); }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0; }
+
+body {
+  height: 100vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.container {
+  width: 50%;
+  text-align: center; }
+  .container img {
+    width: 70%;
+    margin-bottom: 2rem; }
+  .container .step-wrap {
+    position: relative; }
+    .container .step-wrap .circle-wrap {
+      width: 100%;
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      position: relative; }
+      .container .step-wrap .circle-wrap .circle {
+        height: 20px;
+        width: 20px;
+        border: 4px solid var(--light-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        background-color: #fff; }
+      .container .step-wrap .circle-wrap .active {
+        border-color: var(--dark-color); }
+    .container .step-wrap .step-line1 {
+      background-color: var(--dark-color);
+      height: 4px;
+      width: 0%;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1; }
+  .container .step-wrap::before {
+    content: "";
+    background-color: var(--light-color);
+    height: 4px;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1; }
+  .container .btn-wrap {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    margin-top: 1.5rem; }
+    .container .btn-wrap .btn {
+      background-color: var(--dark-color);
+      color: #fff;
+      width: 75px;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer; }
+    .container .btn-wrap .btn:active {
+      transform: scale(0.97); }
+    .container .btn-wrap .btn:disabled {
+      background-color: var(--light-color);
+      cursor: not-allowed; }
+    .container .btn-wrap .active:hover {
+      opacity: 80%; }
+    .container .btn-wrap .active {
+      cursor: pointer;
+      background-color: #7979ff; }
